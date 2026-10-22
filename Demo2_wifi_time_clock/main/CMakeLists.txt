@@ -1,0 +1,36 @@
+idf_component_register(
+    SRCS
+        "main.c"
+        "mic.c"
+        "usb_audio.c"
+        "text.c"
+        "hub75.c"
+        "display.c"
+        "fonts.c"
+        "faces.c"
+        "tetris.c"
+        "snake.c"
+        "flappy.c"
+        "battle.c"
+        "pacman.c"
+        "shooter.c"
+        "racer.c"
+        "wifi_prov.c"
+        "net_time.c"
+    INCLUDE_DIRS
+        "."
+        "../image"
+    EMBED_FILES
+        "textfont.bin"
+    REQUIRES
+        "driver"
+        "esp_lcd"
+        "esp_wifi"
+        "esp_netif"
+        "esp_http_server"
+        "esp_adc"
+        "esp_timer"
+        "json"
+        "lwip"
+        "nvs_flash"
+)

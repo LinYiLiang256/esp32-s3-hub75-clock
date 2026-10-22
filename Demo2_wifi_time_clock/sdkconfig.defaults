@@ -1,0 +1,27 @@
+# ============================================================
+#  demo2 默认配置：WiFi 配网 + 网络时钟
+# ============================================================
+
+# ---- 目标芯片 ----
+CONFIG_IDF_TARGET="esp32s3"
+
+# ---- Flash：16MB ----
+CONFIG_ESPTOOLPY_FLASHSIZE_16MB=y
+
+# ---- 分区表：单应用大分区（WiFi + HTTP 栈体积较大）----
+CONFIG_PARTITION_TABLE_SINGLE_APP_LARGE=y
+
+# ---- 系统节拍 1000Hz ----
+CONFIG_FREERTOS_HZ=1000
+
+# ---- 主任务栈 ----
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=8192
+
+# ---- 串口控制台 ----
+CONFIG_ESP_CONSOLE_UART_DEFAULT=y
+
+# ---- WiFi / 网络组件（默认即开启，此处显式声明）----
+CONFIG_ESP_WIFI_ENABLED=y
+
+# ---- 说明 ----
+# 本 demo 不需要 PSRAM，默认不开启（开启后 GPIO33~37 会被占用）。

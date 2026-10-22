@@ -1,0 +1,26 @@
+# ============================================================
+#  默认配置（首次构建时由 idf.py 读取并生成 build/sdkconfig）
+#  目标：ESP32-S3-N16R8（16MB Flash + 8MB PSRAM）
+# ============================================================
+
+# ---- 目标芯片 ----
+CONFIG_IDF_TARGET="esp32s3"
+
+# ---- Flash：16MB ----
+CONFIG_ESPTOOLPY_FLASHSIZE_16MB=y
+
+# ---- 系统节拍 1000Hz，方便使用 pdMS_TO_TICKS 做毫秒级延时 ----
+CONFIG_FREERTOS_HZ=1000
+
+# ---- app_main 所在任务的栈大小 ----
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=8192
+
+# ---- 串口控制台（日志输出）----
+CONFIG_ESP_CONSOLE_UART_DEFAULT=y
+
+# ---- 说明 ----
+# 本 demo 不需要 PSRAM，因此默认不开启（开启后 GPIO33~37 会被占用）。
+# 如后续 demo 需要大容量缓冲区，可取消下面几行注释：
+# CONFIG_SPIRAM=y
+# CONFIG_SPIRAM_MODE_OCT=y
+# CONFIG_SPIRAM_SPEED_80M=y
