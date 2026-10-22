@@ -319,3 +319,7 @@ Windows 下可用 ESP-IDF 的 `idf.py build flash -p COM3` 或 esptool 烧录。
 - `Demo2_wifi_time_clock`：本工程，灰度驱动 + 全部动态功能。
 
 两者接线完全一致。
+
+---
+
+**许可证**：本项目采用 [MIT License](../LICENSE) 开源。
